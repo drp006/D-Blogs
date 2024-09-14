@@ -1,0 +1,36 @@
+<%- include('partials/header.ejs') %>
+
+<div class="min-vh-100 posts">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="content col-lg-8 col-12 p-4">
+                <div class="preview-card">
+                    <div class="preview-card__wrp">
+                    <div class="preview-card__item">
+                        <div class="preview-card__img">
+                        <img src="<%= url %>" alt="">
+                        </div>
+                        <div class="preview-card__content">
+                        <div class="preview-card__title"><%= title %></div>
+                        <div class="preview-card__text"><%= content %></div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content col-lg-2 col-8 my-4 mx-4 p-4 text-center" style="height: 170px;">
+                <form action="/delete" method="post">
+                    <input type="text" name="postId" hidden value="<%= postId %>">
+                    <input style="width: 85%;" class="btn btn-danger fs-5 btn-lg my-2 button-rad" type="submit" name="delete" value="Delete">
+                </form>
+                <a href="/edit/<%= postId %>"><input style="width: 85%;" class="fs-5 btn-lg my-2 button-rad view-create-btn" type="button" value="Edit"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include("partials/footer.ejs") %>
+
+
+

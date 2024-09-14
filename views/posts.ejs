@@ -1,0 +1,53 @@
+<%- include("partials/header.ejs") %>
+<div class="min-vh-100 posts roboto-regular">
+    <div class="container">
+        <div class="row flex-row justify-content-evenly">
+            <div class="content col-12 col-xxl-8 col-xl-8 p-4">
+                <% if (posts.length === 0) { %>
+                    <div class="text-center">
+                        <h3>No posts yet... </h3>
+                    </div>
+                <% } else {  %>
+                    <ul class="p-0">
+                <%      posts.forEach((post) => { %>
+                            <li class="p-1">
+                                <div class="preview-card">
+                                    <div class="preview-card__wrp">
+                                    <div class="preview-card__item">
+                                        <div class="preview-card__img">
+                                        <img src="<%= post.url %>" alt="">
+                                        </div>
+                                        <div class="preview-card__content">
+                                        <span class="preview-card__code"><%= post.date %></span>
+                                        <div class="preview-card__title"><%= post.title %></div>
+                                        <div class="preview-card__text"><%= post.content.slice(0,150) %></div>
+                                        <a href="/view/<%= posts.indexOf(post) %>" class="preview-card__button">READ MORE</a>
+                                        </div>
+                                    </div>
+                        
+                                    </div>
+                                </div>
+                            </li>
+                <%     });  %>
+                    </ul>
+                <% }  %>
+            </div>
+            <div id="aside" class="content col-lg-2 col-8 my-4 mx-4 p-4 text-center">
+                <div class="text-center my-4">
+                    <a href="/create" class="create-btn">Create Post</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include("partials/footer.ejs") %>
+
+
+
+
+
+
+
+
+
+
