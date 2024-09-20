@@ -225,10 +225,10 @@ display: none;
 .create-btn:hover{
     display: inline-block;
     width: 90%;
-    height: 70px;
+    height: 65px;
     background-color: #000;
     color: #fff;
-    padding-top: 25px;
+    padding-top: 20px;
     justify-content: center;
     text-align: center;
     text-decoration: none;
@@ -450,5 +450,10 @@ display: none;
 @media screen and (max-width: 576px) {
   .footer-section{
     text-align: center;
+  }
+}
+@media screen and (orientation: landscape) {
+  .c2 {
+    height: 100vh;
   }
 }
